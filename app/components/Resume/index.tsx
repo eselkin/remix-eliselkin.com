@@ -49,13 +49,15 @@ export default function ResumeComponent() {
         <h2 className="text-xl mb-2" slot="label">
           Resume Type
         </h2>
-        {Object.keys(ResumeType).map((rt, i) =>
-          /[0-9]/.test(rt) ? null : (
-            <SlOption key={`resume-type-${i}`} value={rt}>
-              {startCase(rt)}
-            </SlOption>
-          )
-        )}
+        {Object.keys(ResumeType)
+          .filter((rt) => rt != ResumeType.Therapist)
+          .map((rt, i) =>
+            /[0-9]/.test(rt) ? null : (
+              <SlOption key={`resume-type-${i}`} value={rt}>
+                {startCase(rt)}
+              </SlOption>
+            )
+          )}
       </SlSelect>
       <h2 className="text-xl mt-4 mb-2">Skills (sorted by skill level)</h2>
       {Object.entries(skillObject).map(([key, value]) => (
