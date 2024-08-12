@@ -6250,7 +6250,7 @@ if (import.meta) {
     //@ts-expect-error
     "app/components/Resume/types.ts"
   );
-  import.meta.hot.lastModified = "1723418410268.5935";
+  import.meta.hot.lastModified = "1723418411947.6936";
 }
 var ResumeType = /* @__PURE__ */ ((ResumeType2) => {
   ResumeType2["Architect"] = "Architect";
@@ -8312,7 +8312,7 @@ if (import.meta) {
     //@ts-expect-error
     "app/components/Resume/School.tsx"
   );
-  import.meta.hot.lastModified = "1723418111223.4038";
+  import.meta.hot.lastModified = "1723418148785.391";
 }
 function School({
   s: s2,
@@ -8434,7 +8434,7 @@ if (import.meta) {
     //@ts-expect-error
     "app/components/Resume/index.tsx"
   );
-  import.meta.hot.lastModified = "1723416539035.151";
+  import.meta.hot.lastModified = "1723426220132.3276";
 }
 function ResumeComponent() {
   _s4();
@@ -8476,10 +8476,10 @@ function ResumeComponent() {
         lineNumber: 59,
         columnNumber: 9
       }, this),
-      Object.keys(ResumeType).map((rt, i) => /[0-9]/.test(rt) ? null : /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(SlOption, { value: rt, children: startCase_default(rt) }, `resume-type-${i}`, false, {
+      Object.keys(ResumeType).filter((rt) => rt != "Therapist" /* Therapist */).map((rt, i) => /[0-9]/.test(rt) ? null : /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(SlOption, { value: rt, children: startCase_default(rt) }, `resume-type-${i}`, false, {
         fileName: "app/components/Resume/index.tsx",
         lineNumber: 62,
-        columnNumber: 75
+        columnNumber: 116
       }, this))
     ] }, void 0, true, {
       fileName: "app/components/Resume/index.tsx",
@@ -8563,16 +8563,24 @@ if (import.meta) {
     //@ts-expect-error
     "app/routes/resume.tsx"
   );
-  import.meta.hot.lastModified = "1722801165322.2483";
+  import.meta.hot.lastModified = "1723426659065.792";
 }
+var meta = () => {
+  return [{
+    title: "Eli Selkin | Resume"
+  }, {
+    property: "og:title",
+    content: "Eli Selkin | Resume"
+  }];
+};
 function Resume() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(PageWithDrawer, { mainChildren: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(ResumeComponent, {}, void 0, false, {
     fileName: "app/routes/resume.tsx",
-    lineNumber: 24,
+    lineNumber: 32,
     columnNumber: 40
   }, this) }, void 0, false, {
     fileName: "app/routes/resume.tsx",
-    lineNumber: 24,
+    lineNumber: 32,
     columnNumber: 10
   }, this);
 }
@@ -8582,7 +8590,8 @@ $RefreshReg$(_c5, "Resume");
 window.$RefreshReg$ = prevRefreshReg;
 window.$RefreshSig$ = prevRefreshSig;
 export {
-  Resume as default
+  Resume as default,
+  meta
 };
 /*! Bundled license information:
 
@@ -8597,4 +8606,4 @@ lodash-es/lodash.js:
    * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
    *)
 */
-//# sourceMappingURL=/build/routes/resume-PIGEG5KJ.js.map
+//# sourceMappingURL=/build/routes/resume-57MDNO53.js.map

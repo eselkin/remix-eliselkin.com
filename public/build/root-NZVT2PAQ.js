@@ -28,7 +28,7 @@ import {
 var cssBundleHref = void 0;
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-EVYIGGTC.css";
+var tailwind_default = "/build/_assets/tailwind-XXP37GU7.css";
 
 // node_modules/@shoelace-style/shoelace/dist/themes/light.css
 var light_default = "/build/_assets/light-G6CWLUQ4.css";
@@ -201,4 +201,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-UMACH7QE.js.map
+//# sourceMappingURL=/build/root-NZVT2PAQ.js.map

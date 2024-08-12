@@ -58,14 +58,14 @@ if (import.meta) {
     //@ts-expect-error
     "app/routes/simple-pwd-generator._index.tsx"
   );
-  import.meta.hot.lastModified = "1723421012656.4917";
+  import.meta.hot.lastModified = "1723429653260.6748";
 }
 var meta = () => {
   return [{
-    title: "simple-pwd-generator"
+    title: "Eli Selkin | simple-pwd-generator"
   }, {
     property: "og:title",
-    content: "simple-pwd-generator"
+    content: "Eli Selkin | simple-pwd-generator"
   }];
 };
 function SimplePwdGeneratorHome() {
@@ -131,7 +131,7 @@ function SimplePwdGeneratorHome() {
       lineNumber: 60,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-11/12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SlCarousel, { loop: true, autoplay: true, navigation: true, pagination: true, mouseDragging: true, children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mx-auto w-full max-w-3xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SlCarousel, { loop: true, autoplay: true, pagination: true, mouseDragging: true, children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SlCarouselItem, { className: "m-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: pw_mac_1_default, alt: "unselected password type", className: "h-full" }, void 0, false, {
         fileName: "app/routes/simple-pwd-generator._index.tsx",
         lineNumber: 71,
@@ -216,4 +216,4 @@ export {
   SimplePwdGeneratorHome as default,
   meta
 };
-//# sourceMappingURL=/build/routes/simple-pwd-generator._index-7EGYKYSV.js.map
+//# sourceMappingURL=/build/routes/simple-pwd-generator._index-VWL2BONI.js.map

@@ -2896,7 +2896,7 @@ import {
 } from "@remix-run/react";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-EVYIGGTC.css";
+var tailwind_default = "/build/_assets/tailwind-XXP37GU7.css";
 
 // node_modules/@shoelace-style/shoelace/dist/themes/light.css
 var light_default = "/build/_assets/light-G6CWLUQ4.css";
@@ -3404,10 +3404,10 @@ var pw_mac_4_default = "/build/_assets/pw-mac-4-UFKYYMVC.png";
 // app/routes/simple-pwd-generator._index.tsx
 import { Fragment as Fragment3, jsxDEV as jsxDEV6 } from "react/jsx-dev-runtime";
 var meta = () => [
-  { title: "simple-pwd-generator" },
+  { title: "Eli Selkin | simple-pwd-generator" },
   {
     property: "og:title",
-    content: "simple-pwd-generator"
+    content: "Eli Selkin | simple-pwd-generator"
   }
 ];
 function SimplePwdGeneratorHome() {
@@ -3481,7 +3481,7 @@ function SimplePwdGeneratorHome() {
           lineNumber: 47,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ jsxDEV6("div", { className: "w-11/12", children: /* @__PURE__ */ jsxDEV6(SlCarousel, { loop: !0, autoplay: !0, navigation: !0, pagination: !0, mouseDragging: !0, children: [
+        /* @__PURE__ */ jsxDEV6("div", { className: "mx-auto w-full max-w-3xl", children: /* @__PURE__ */ jsxDEV6(SlCarousel, { loop: !0, autoplay: !0, pagination: !0, mouseDragging: !0, children: [
           /* @__PURE__ */ jsxDEV6(SlCarouselItem, { className: "m-4", children: /* @__PURE__ */ jsxDEV6(
             "img",
             {
@@ -3674,7 +3674,8 @@ function Main() {
 // app/routes/resume.tsx
 var resume_exports = {};
 __export(resume_exports, {
-  default: () => Resume
+  default: () => Resume,
+  meta: () => meta3
 });
 
 // app/components/Resume/index.tsx
@@ -5222,11 +5223,11 @@ function ResumeComponent() {
             lineNumber: 49,
             columnNumber: 9
           }, this),
-          Object.keys(ResumeType).map(
+          Object.keys(ResumeType).filter((rt) => rt != "Therapist" /* Therapist */).map(
             (rt, i) => /[0-9]/.test(rt) ? null : /* @__PURE__ */ jsxDEV12(SlOption, { value: rt, children: startCase(rt) }, `resume-type-${i}`, !1, {
               fileName: "app/components/Resume/index.tsx",
-              lineNumber: 54,
-              columnNumber: 13
+              lineNumber: 56,
+              columnNumber: 15
             }, this)
           )
         ]
@@ -5242,13 +5243,13 @@ function ResumeComponent() {
     ),
     /* @__PURE__ */ jsxDEV12("h2", { className: "text-xl mt-4 mb-2", children: "Skills (sorted by skill level)" }, void 0, !1, {
       fileName: "app/components/Resume/index.tsx",
-      lineNumber: 60,
+      lineNumber: 62,
       columnNumber: 7
     }, this),
     Object.entries(skillObject).map(([key, value]) => /* @__PURE__ */ jsxDEV12(SlDetails, { children: [
       /* @__PURE__ */ jsxDEV12("h3", { slot: "summary", className: "text-lg font-medium", children: startCase(ResumeSkillType[parseInt(key)]) }, void 0, !1, {
         fileName: "app/components/Resume/index.tsx",
-        lineNumber: 63,
+        lineNumber: 65,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ jsxDEV12("div", { className: "-mt-2", children: value.map((skill, i, a) => /* @__PURE__ */ jsxDEV12(
@@ -5261,23 +5262,23 @@ function ResumeComponent() {
         !1,
         {
           fileName: "app/components/Resume/index.tsx",
-          lineNumber: 68,
+          lineNumber: 70,
           columnNumber: 15
         },
         this
       )) }, void 0, !1, {
         fileName: "app/components/Resume/index.tsx",
-        lineNumber: 66,
+        lineNumber: 68,
         columnNumber: 11
       }, this)
     ] }, `skill-type-${key}`, !0, {
       fileName: "app/components/Resume/index.tsx",
-      lineNumber: 62,
+      lineNumber: 64,
       columnNumber: 9
     }, this)),
     /* @__PURE__ */ jsxDEV12("h2", { className: "text-xl mt-4 mb-2", children: "Employment" }, void 0, !1, {
       fileName: "app/components/Resume/index.tsx",
-      lineNumber: 77,
+      lineNumber: 79,
       columnNumber: 7
     }, this),
     jobs.filter((j) => j.resumeTypes.includes(selectedResumeType)).sort((a, b) => b.startDate.toMillis() - a.startDate.toMillis()).map((j) => /* @__PURE__ */ jsxDEV12(
@@ -5290,14 +5291,14 @@ function ResumeComponent() {
       !1,
       {
         fileName: "app/components/Resume/index.tsx",
-        lineNumber: 82,
+        lineNumber: 84,
         columnNumber: 11
       },
       this
     )),
     /* @__PURE__ */ jsxDEV12("h2", { className: "text-xl mt-4 mb-2", children: "Education" }, void 0, !1, {
       fileName: "app/components/Resume/index.tsx",
-      lineNumber: 88,
+      lineNumber: 90,
       columnNumber: 7
     }, this),
     schools.filter((s) => s.resumeTypes.includes(selectedResumeType)).sort((a, b) => b.startDate.toMillis() - a.startDate.toMillis()).map((s) => /* @__PURE__ */ jsxDEV12(
@@ -5310,7 +5311,7 @@ function ResumeComponent() {
       !1,
       {
         fileName: "app/components/Resume/index.tsx",
-        lineNumber: 93,
+        lineNumber: 95,
         columnNumber: 11
       },
       this
@@ -5324,20 +5325,27 @@ function ResumeComponent() {
 
 // app/routes/resume.tsx
 import { jsxDEV as jsxDEV13 } from "react/jsx-dev-runtime";
+var meta3 = () => [
+  { title: "Eli Selkin | Resume" },
+  {
+    property: "og:title",
+    content: "Eli Selkin | Resume"
+  }
+];
 function Resume() {
   return /* @__PURE__ */ jsxDEV13(PageWithDrawer, { mainChildren: /* @__PURE__ */ jsxDEV13(ResumeComponent, {}, void 0, !1, {
     fileName: "app/routes/resume.tsx",
-    lineNumber: 5,
+    lineNumber: 15,
     columnNumber: 40
   }, this) }, void 0, !1, {
     fileName: "app/routes/resume.tsx",
-    lineNumber: 5,
+    lineNumber: 15,
     columnNumber: 10
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-D334MTWT.js", imports: ["/build/_shared/chunk-O4BRYNJ4.js", "/build/_shared/chunk-MBEN6P25.js", "/build/_shared/chunk-YW5NJ4SB.js", "/build/_shared/chunk-U4FRFQSK.js", "/build/_shared/chunk-XGOTYLZ5.js", "/build/_shared/chunk-7M6SC7J5.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-UMACH7QE.js", imports: ["/build/_shared/chunk-WVWEAPAP.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-N66HDTFZ.js", imports: ["/build/_shared/chunk-GX5QH64Y.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/resume": { id: "routes/resume", parentId: "root", path: "resume", index: void 0, caseSensitive: void 0, module: "/build/routes/resume-PIGEG5KJ.js", imports: ["/build/_shared/chunk-GX5QH64Y.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/simple-pwd-generator._index": { id: "routes/simple-pwd-generator._index", parentId: "root", path: "simple-pwd-generator", index: !0, caseSensitive: void 0, module: "/build/routes/simple-pwd-generator._index-7EGYKYSV.js", imports: ["/build/_shared/chunk-GX5QH64Y.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/simple-pwd-generator.privacy": { id: "routes/simple-pwd-generator.privacy", parentId: "root", path: "simple-pwd-generator/privacy", index: void 0, caseSensitive: void 0, module: "/build/routes/simple-pwd-generator.privacy-DLUWVLJG.js", imports: ["/build/_shared/chunk-GX5QH64Y.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "226dc580", hmr: { runtime: "/build/_shared/chunk-YW5NJ4SB.js", timestamp: 1723421013175 }, url: "/build/manifest-226DC580.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-D334MTWT.js", imports: ["/build/_shared/chunk-O4BRYNJ4.js", "/build/_shared/chunk-MBEN6P25.js", "/build/_shared/chunk-YW5NJ4SB.js", "/build/_shared/chunk-U4FRFQSK.js", "/build/_shared/chunk-XGOTYLZ5.js", "/build/_shared/chunk-7M6SC7J5.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-NZVT2PAQ.js", imports: ["/build/_shared/chunk-WVWEAPAP.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-N66HDTFZ.js", imports: ["/build/_shared/chunk-GX5QH64Y.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/resume": { id: "routes/resume", parentId: "root", path: "resume", index: void 0, caseSensitive: void 0, module: "/build/routes/resume-57MDNO53.js", imports: ["/build/_shared/chunk-GX5QH64Y.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/simple-pwd-generator._index": { id: "routes/simple-pwd-generator._index", parentId: "root", path: "simple-pwd-generator", index: !0, caseSensitive: void 0, module: "/build/routes/simple-pwd-generator._index-VWL2BONI.js", imports: ["/build/_shared/chunk-GX5QH64Y.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/simple-pwd-generator.privacy": { id: "routes/simple-pwd-generator.privacy", parentId: "root", path: "simple-pwd-generator/privacy", index: void 0, caseSensitive: void 0, module: "/build/routes/simple-pwd-generator.privacy-DLUWVLJG.js", imports: ["/build/_shared/chunk-GX5QH64Y.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "48d2246c", hmr: { runtime: "/build/_shared/chunk-YW5NJ4SB.js", timestamp: 1723429675936 }, url: "/build/manifest-48D2246C.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1, v3_throwAbortReason: !1, unstable_singleFetch: !1, unstable_lazyRouteDiscovery: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

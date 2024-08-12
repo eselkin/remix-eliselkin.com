@@ -52,8 +52,8 @@ export default function SimplePwdGeneratorHome() {
               <li>configurable special characters</li>
             </ul>
           </p>
-          <div className="w-11/12">
-            <SlCarousel loop autoplay navigation pagination mouseDragging>
+          <div className="mx-auto w-full max-w-3xl">
+            <SlCarousel loop autoplay pagination mouseDragging>
               <SlCarouselItem className="m-4">
                 <img
                   src={pwMac1}
