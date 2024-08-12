@@ -12,10 +12,10 @@ import pwMac4 from "~/assets/img/pw-mac-4.png";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "simple-pwd-generator" },
+    { title: "Eli Selkin | simple-pwd-generator" },
     {
       property: "og:title",
-      content: "simple-pwd-generator",
+      content: "Eli Selkin | simple-pwd-generator",
     },
   ];
 };
