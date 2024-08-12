@@ -82,6 +82,8 @@ export const jobs: ResumeJob[] = [
       ResumeType.SeniorSoftwareEngineer,
       ResumeType.SeniorBackendEngineer,
       ResumeType.SeniorFullstackEngineer,
+      ResumeType.SeniorDataEngineer,
+      ResumeType.MachineLearningEngineer,
     ],
     accomplishments: [
       [
@@ -90,6 +92,8 @@ export const jobs: ResumeJob[] = [
           ResumeType.SeniorSoftwareEngineer,
           ResumeType.SeniorBackendEngineer,
           ResumeType.SeniorFullstackEngineer,
+          ResumeType.SeniorDataEngineer,
+          ResumeType.MachineLearningEngineer,
         ],
         [
           "Built statistical anlalysis dashboard for self-report data",
