@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  :host,
+  .sl-theme-dark {
+    @apply bg-gray-800 text-white;
+  }
+
+  :host,
+  .sl-theme-light {
+    @apply bg-gray-200 text-black;
+  }
+
+  .sl-theme-dark footer {
+    @apply bg-gray-900 text-white;
+  }
+
+  .sl-theme-light footer {
+    @apply bg-gray-200 text-black;
+  }
+
+  .sl-theme-dark .navbar {
+    @apply bg-gray-900;
+  }
+
+  .sl-theme-light .navbar {
+    @apply bg-gray-400;
+  }
+
+  .sl-theme-dark .avatar-bg {
+    @apply bg-white text-black;
+  }
+
+  .sl-theme-light .avatar-bg {
+    @apply bg-blue-950 text-white;
+  }
+
+  .sl-theme-dark .dropdown-bg {
+    @apply bg-gray-900 shadow-white;
+  }
+
+  .sl-theme-light .dropdown-bg {
+    @apply bg-gray-400 shadow-black;
+  }
+
+  .sl-theme-dark .direction-bg {
+    @apply bg-gray-900;
+  }
+
+  .sl-theme-light .direction-bg {
+    @apply bg-gray-400;
+  }
+
+  .main-children-base {
+    @apply px-2 pt-4 md:p-4 lg:px-8 lg:pt-8 h-full;
+  }
+
+  .sl-theme-dark .main-children-base {
+    @apply bg-gray-800;
+  }
+
+  .sl-theme-light .main-children-base {
+    @apply bg-gray-200;
+  }
+
+  .main-children {
+    @apply px-2 py-4 md:p-4 lg:p-8 h-[calc(100vh-128px)] md:h-[calc(100vh-64px)] !overflow-y-scroll !overflow-x-hidden;
+  }
+
+
+  .panel-column {
+    @apply flex flex-col w-full max-w-full md:w-1/2 md:max-w-[50%];
+  }
+
+  .card-panel {
+    @apply p-0 my-1 md:m-2 w-full;
+  }
+
+  .card-panel [slot="header"] {
+    @apply flex flex-row;
+  }
+
+  .sl-theme-dark .home-section-bg {
+    @apply bg-none;
+  }
+
+
+  .sl-theme-light .home-section-bg {
+    @apply bg-none;
+  }
+
+
+}
