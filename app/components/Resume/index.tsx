@@ -1,26 +1,28 @@
 import React, { useContext, useMemo, useState } from "react";
 import { skills } from "./skills";
 import { jobs } from "./jobs";
-import {
-  ResumeSkill,
-  ResumeSkillProficiency,
-  ResumeSkillType,
-  ResumeType,
-} from "./types";
-import { round, startCase } from "lodash-es";
+import { ResumeSkill, ResumeSkillType, ResumeType } from "./types";
+import { startCase } from "lodash-es";
 import { ShoelaceContext } from "~/shoelace";
-import { DateTime } from "luxon";
 import SkillComponent from "./Skill";
 import JobComponent from "./Job";
 import { schools } from "./schools";
 import School from "./School";
+import { summaries } from "./summaries";
+import Summary from "./Summary";
+import { Link } from "@remix-run/react";
 export default function ResumeComponent() {
-  const { SlTooltip, SlDetails, SlSelect, SlOption } =
-    useContext(ShoelaceContext);
+  const { SlDetails, SlSelect, SlOption } = useContext(ShoelaceContext);
 
   const [selectedResumeType, setSelectedResumeType] = useState<ResumeType>(
     ResumeType.Architect
   );
+  const summary = useMemo(() => {
+    return summaries
+      .filter((s) => s.resumeTypes.includes(selectedResumeType))
+      .map((s) => s.statements)
+      .flat();
+  }, [summaries, selectedResumeType]);
   const skillObject = useMemo(() => {
     const skillsTemp = skills.reduce((acc, skill) => {
       if (skill.resumeTypes.includes(selectedResumeType)) {
@@ -38,13 +40,37 @@ export default function ResumeComponent() {
   }, [skills, selectedResumeType]);
   return (
     <div>
-      <h1 className="text-3xl">Eli Selkin</h1>
-      <h2 className="mb-4">L.C.S.W. BBS CA #27109, M.S.</h2>
+      <h1 className="text-3xl flex md:flex-row items-baseline">
+        <div className="">Eli Selkin</div>
+        <div className="ml-2 text-xl">L.C.S.W., M.S.</div>
+        <div className="text-xs ml-2">BBS CA #27109</div>
+      </h1>
+      <h2 className="text-sm mb-2">
+        <Link
+          to="mailto:eli@eliselkin.com"
+          className="link link-hover link-primary text-xs"
+        >
+          eli@eliselkin.com
+        </Link>
+        <Link
+          to="tel:626-616-2685"
+          className="ml-2 link link-hover link-primary text-xs"
+        >
+          626.616.2685
+        </Link>
+        <Link
+          to="https://github.com/eselkin"
+          className="ml-2 link link-hover link-primary text-xs"
+        >
+          github.com/eselkin
+        </Link>
+      </h2>
       <SlSelect
         onSlChange={(e) => {
           setSelectedResumeType(ResumeType[e.target.value]);
         }}
         value={`${selectedResumeType}`}
+        className="print:hidden"
       >
         <h2 className="text-xl mb-2" slot="label">
           Resume Type
@@ -59,45 +85,53 @@ export default function ResumeComponent() {
             )
           )}
       </SlSelect>
-      <h2 className="text-xl mt-4 mb-2">Skills (sorted by skill level)</h2>
+      {(summary?.length || 0) > 0 && (
+        <>
+          <h2 className="text-xl mt-4 mb-2 font-semibold">Summary</h2>
+          <Summary summary={summary} />
+        </>
+      )}
+      <h2 className="text-xl mt-4 mb-2 font-bold print:hidden">Skills</h2>
       {Object.entries(skillObject).map(([key, value]) => (
-        <SlDetails key={`skill-type-${key}`}>
-          <h3 slot="summary" className="text-lg font-medium">
-            {startCase(ResumeSkillType[parseInt(key)])}
-          </h3>
-          <div className="-mt-2">
-            {value.map((skill, i, a) => (
-              <SkillComponent
-                key={`skill-${skill.id}`}
-                skill={skill}
-                isLast={a.length - 1 === i}
-              />
-            ))}
-          </div>
-        </SlDetails>
+        <div key={`skill-type-${key}`} className="print:hidden">
+          <span className="text-sm font-medium mr-2">
+            {startCase(ResumeSkillType[parseInt(key)])}:
+          </span>
+          {value.map((skill, i, a) => (
+            <SkillComponent
+              key={`skill-${skill.id}`}
+              skill={skill}
+              isLast={a.length - 1 === i}
+            />
+          ))}
+        </div>
       ))}
-      <h2 className="text-xl mt-4 mb-2">Employment</h2>
-      {jobs
-        .filter((j) => j.resumeTypes.includes(selectedResumeType))
-        .sort((a, b) => b.startDate.toMillis() - a.startDate.toMillis())
-        .map((j) => (
-          <JobComponent
-            key={`job-${j.id}`}
-            j={j}
-            selectedResumeType={selectedResumeType}
-          />
-        ))}
-      <h2 className="text-xl mt-4 mb-2">Education</h2>
-      {schools
-        .filter((s) => s.resumeTypes.includes(selectedResumeType))
-        .sort((a, b) => b.startDate.toMillis() - a.startDate.toMillis())
-        .map((s) => (
-          <School
-            key={`school-${s.id}`}
-            s={s}
-            resumeType={selectedResumeType}
-          />
-        ))}
+      <h2 className="text-xl font-bold mt-4 mb-2">Employment</h2>
+      <div className="flex flex-col space-y-4">
+        {jobs
+          .filter((j) => j.resumeTypes.includes(selectedResumeType))
+          .sort((a, b) => b.startDate.toMillis() - a.startDate.toMillis())
+          .map((j) => (
+            <JobComponent
+              key={`job-${j.id}`}
+              j={j}
+              selectedResumeType={selectedResumeType}
+            />
+          ))}
+      </div>
+      <h2 className="text-xl font-bold mt-4 mb-2">Education</h2>
+      <div className="flex flex-col space-y-4">
+        {schools
+          .filter((s) => s.resumeTypes.includes(selectedResumeType))
+          .sort((a, b) => b.startDate.toMillis() - a.startDate.toMillis())
+          .map((s) => (
+            <School
+              key={`school-${s.id}`}
+              s={s}
+              resumeType={selectedResumeType}
+            />
+          ))}
+      </div>
     </div>
   );
 }

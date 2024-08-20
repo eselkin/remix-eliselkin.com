@@ -1,4 +1,4 @@
-import { useContext, useMemo } from "react";
+import { useContext, useMemo, Fragment } from "react";
 import { ResumeEducation, ResumeType } from "./types";
 import { ShoelaceContext } from "~/shoelace";
 import { skills } from "./skills";
@@ -18,7 +18,7 @@ export default function School({
     [s.accomplishments]
   );
   return (
-    <SlDetails>
+    <div>
       <div className="w-11/12" slot="summary">
         <h3 className="font-medium text-lg">
           {s.title}
@@ -35,32 +35,35 @@ export default function School({
           </div>
         </h4>
       </div>
-      {accomplishments.some((a) => a[1].length > 0) ? (
-        <>
-          <h5 className="-mt-2">Accomplishments:</h5>
-          <ul className="list list-disc pl-4">
-            {accomplishments
-              .map((a) => a[1])
-              .flat()
-              .map((a, i) => (
-                <li key={`accomplishment-${i}`}>{a}</li>
-              ))}
-          </ul>
-        </>
-      ) : null}
-      <h5
-        className={`${
-          accomplishments.some((a) => a[1].length > 0) ? "mt-3" : "-mt-2"
-        }`}
-      >
-        Skills used:
-      </h5>
-      {s.skillsUsed.map(
-        (skillUsed, i, skillsUsed) =>
-          `${skills.find((sk) => sk.id === skillUsed)?.title}${
-            skillsUsed.length - 1 > i ? ", " : ""
-          }`
-      )}
-    </SlDetails>
+      <div className="print:hidden">
+        {accomplishments.some((a) => a[1].length > 0) ? (
+          <>
+            <ul className="list list-disc pl-4">
+              {accomplishments
+                .map((a) => a[1])
+                .flat()
+                .map((a, i) => (
+                  <li key={`accomplishment-${i}`}>{a}</li>
+                ))}
+            </ul>
+          </>
+        ) : null}
+      </div>
+      <div className="print:hidden">
+        <h5
+          className={`${
+            accomplishments.some((a) => a[1].length > 0) ? "mt-3" : "mt-1"
+          }`}
+        >
+          Skills used:
+        </h5>
+        {s.skillsUsed.map(
+          (skillUsed, i, skillsUsed) =>
+            `${skills.find((sk) => sk.id === skillUsed)?.title}${
+              skillsUsed.length - 1 > i ? ", " : ""
+            }`
+        )}
+      </div>
+    </div>
   );
 }

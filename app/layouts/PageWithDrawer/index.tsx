@@ -39,7 +39,7 @@ export default function PageWithDrawer({
     <>
       <PageDrawer open={open} setOpen={setOpen} />
       <div className={`${theme} h-full min-h-[100vh] m-0 p-0`} key={theme}>
-        <div className="navbar">
+        <div className="navbar print:hidden">
           <div className="flex-1">
             <SlIconButton
               name="list"

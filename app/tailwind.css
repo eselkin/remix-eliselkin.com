@@ -67,7 +67,7 @@
   }
 
   .main-children {
-    @apply px-2 py-4 md:p-4 lg:p-8 h-[calc(100vh-128px)] md:h-[calc(100vh-64px)] !overflow-y-scroll !overflow-x-hidden;
+    @apply px-2 py-4 md:p-4 lg:p-8 h-[calc(100vh-128px)] md:h-[calc(100vh-64px)] !overflow-y-scroll !overflow-x-hidden print:h-max;
   }
 
 

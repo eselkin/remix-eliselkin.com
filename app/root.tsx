@@ -35,11 +35,11 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     BASE_URL: url.origin.includes("localhost")
       ? url.origin
       : url.origin.replace("http:", "https:"),
-    gaTrackingId: process.env.GA_TRACKING_ID,
+    GTM_ID: process.env.GTM_ID,
   });
 };
 export default function App() {
-  const { BASE_URL, gaTrackingId } = useLoaderData<typeof loader>();
+  const { BASE_URL, GTM_ID } = useLoaderData<typeof loader>();
   const shoelace = useShoelace({ URL: BASE_URL });
   return (
     <html lang="en" className="h-[100vh] p-0 m-0">
@@ -53,16 +53,11 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full p-0 m-0">
-        {!gaTrackingId ? null : (
+        {!GTM_ID ? null : (
           <>
             <script
               async
-              type="text/javascript"
-              src="https://app.termly.io/resource-blocker/c7c42b5a-93d9-4dd8-98d4-7c8431498905"
-            ></script>
-            <script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
             />
             <script
               async
@@ -73,7 +68,7 @@ export default function App() {
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                gtag('config', '${gaTrackingId}', {
+                gtag('config', '${GTM_ID}', {
                   page_path: window.location.pathname,
                 });
               `,
@@ -81,7 +76,7 @@ export default function App() {
             />
             <noscript>
               <iframe
-                src={`https://www.googletagmanager.com/ns.html?id=${gaTrackingId}`}
+                src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
                 height="0"
                 width="0"
                 className="hidden"

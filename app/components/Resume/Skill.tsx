@@ -15,24 +15,22 @@ export default function SkillComponent({
   return (
     <React.Fragment key={`skill-${skill.id}`}>
       <SlTooltip>
-        <span className="cursor-pointer">
+        <span className="cursor-pointer mr-1 text-sm">
           {skill.title}
           {isLast ? "" : ", "}
         </span>
         <div slot="content">
-          <div>
-            <p>Proficiency: {ResumeSkillProficiency[skill.profieciency]}</p>
-            <p>
-              Length used:{" "}
-              {Math.round(
-                skill.endDate
-                  ? skill.endDate.diff(skill.startDate, "years").years
-                  : DateTime.now().diff(skill.startDate, "years").years
-              )}{" "}
-              years
-            </p>
-            {skill.subtitle && <p>{skill.subtitle}</p>}
-          </div>
+          <p>Proficiency: {ResumeSkillProficiency[skill.profieciency]}</p>
+          <p>
+            Length used:{" "}
+            {Math.round(
+              skill.endDate
+                ? skill.endDate.diff(skill.startDate, "years").years
+                : DateTime.now().diff(skill.startDate, "years").years
+            )}{" "}
+            years
+          </p>
+          {skill.subtitle && <p>{skill.subtitle}</p>}
         </div>
       </SlTooltip>
     </React.Fragment>

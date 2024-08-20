@@ -9,17 +9,19 @@ export enum ResumeType {
   SeniorDataEngineer = "SeniorDataEngineer",
   Therapist = "Therapist",
 }
+export type ResumeItemBase = { id: number; resumeTypes: ResumeType[] };
 
-export type ResumeItem = {
-  id: number;
-  resumeTypes: ResumeType[];
+export type ResumeItem = ResumeItemBase & {
   startDate: DateTime;
   endDate?: DateTime;
   title: string;
   subtitle?: string;
 };
+
 type Accomplishment<T, K> = [T, K];
+
 type Accomplishments<T, K> = Accomplishment<T, K>[];
+
 export type ResumeItemDescription = {
   description: string;
   skillsUsed: number[];
@@ -60,3 +62,5 @@ export type ResumeEducation = ResumeItem &
   ResumeItemLocation & {
     GPA: number;
   };
+
+export type Summary = ResumeItemBase & { statements: string[] };

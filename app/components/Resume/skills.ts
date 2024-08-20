@@ -518,7 +518,7 @@ export const skills: ResumeSkill[] = [
       ResumeType.SeniorSoftwareEngineer,
     ],
     title: "Airflow",
-    startDate: DateTime.fromFormat("2018-01-01", yyyyMMdd),
+    startDate: DateTime.fromFormat("2020-01-01", yyyyMMdd),
     profieciency: ResumeSkillProficiency.Intermediate,
   },
   {
