@@ -98,7 +98,7 @@ export const jobs: ResumeJob[] = [
         [
           "Built statistical anlalysis dashboard for self-report data",
           "Built support for self-report data ingestion and processing",
-          "Fine-tuned LLM for batch processing of open-ended self-reports (e.g. thought record patterns)",
+          "Fine-tuned LLM for batch inference on open-ended self-reports (e.g. thought record patterns)",
         ],
       ],
     ],

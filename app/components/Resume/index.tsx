@@ -11,8 +11,10 @@ import School from "./School";
 import { summaries } from "./summaries";
 import Summary from "./Summary";
 import { Link } from "@remix-run/react";
+import { useTheme } from "~/zustand";
 export default function ResumeComponent() {
   const { SlDetails, SlSelect, SlOption } = useContext(ShoelaceContext);
+  const { theme } = useTheme();
 
   const [selectedResumeType, setSelectedResumeType] = useState<ResumeType>(
     ResumeType.Architect
@@ -48,19 +50,25 @@ export default function ResumeComponent() {
       <h2 className="text-sm mb-2">
         <Link
           to="mailto:eli@eliselkin.com"
-          className="link link-hover link-primary text-xs"
+          className={`link link-hover ${
+            theme === "sl-theme-dark" ? "link-accent" : "link-primary"
+          } text-xs`}
         >
           eli@eliselkin.com
         </Link>
         <Link
           to="tel:626-616-2685"
-          className="ml-2 link link-hover link-primary text-xs"
+          className={`ml-2 link link-hover ${
+            theme === "sl-theme-dark" ? "link-accent" : "link-primary"
+          } text-xs`}
         >
           626.616.2685
         </Link>
         <Link
           to="https://github.com/eselkin"
-          className="ml-2 link link-hover link-primary text-xs"
+          className={`ml-2 link link-hover ${
+            theme === "sl-theme-dark" ? "link-accent" : "link-primary"
+          } text-xs`}
         >
           github.com/eselkin
         </Link>
