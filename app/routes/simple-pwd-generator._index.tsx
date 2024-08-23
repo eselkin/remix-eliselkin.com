@@ -46,7 +46,14 @@ export default function SimplePwdGeneratorHome() {
           <h2 className="text-2xl font-bold mt-4 md:mt-6">Installation</h2>
           <p>
             Want to try it out. Use testflight and this{" "}
-            <Link to="https://testflight.apple.com/join/92DWFv5X">link</Link>
+            <Link
+              to="https://testflight.apple.com/join/92DWFv5X"
+              className={`link link-hover underline ${
+                theme === "sl-theme-dark" ? "link-accent" : "link-primary"
+              }`}
+            >
+              link
+            </Link>
           </p>
           <h2 className="text-2xl font-bold mt-4 md:mt-6">Features</h2>
           <p>
